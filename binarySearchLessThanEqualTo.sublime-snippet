@@ -13,25 +13,23 @@ ll binarySearch(vector<ll> vec, ll num, ll n) {
 
 		mid = (left+right)/2;
 
-		if (vec[mid] == num) {
-			while (mid+1 < n && vec[mid+1] == num) {
-				mid++;
-			}
+		if (left == right) {
 			break;
 		}
-		else if (vec[mid] < num) {
+
+		if (vec[mid] <= num) {
 			left = mid+1;
 		}
 		else {
-			right = mid-1;
+			right = mid;
 		}
 	}
 
-	while(mid >= 0 && vec[mid] > num) {
-		mid--;
+	if (vec[mid] <= num) {
+		return mid+1;
 	}
 
-	return mid + 1;
+	return mid;
 }
 
 ]]></content>
