@@ -1,0 +1,42 @@
+<!-- This snippet below will give the last index of the element that is equal to or less than a given number n in a sorted array -->
+
+<snippet>
+	<content><![CDATA[
+ll binarySearch(vector<ll> vec, ll num, ll n) {
+
+	ll left = 0;
+	ll right = n-1;
+
+	ll mid = 0;
+
+	while (left <= right) {
+
+		mid = (left+right)/2;
+
+		if (vec[mid] == num) {
+			while (mid+1 < n && vec[mid+1] == num) {
+				mid++;
+			}
+			break;
+		}
+		else if (vec[mid] < num) {
+			left = mid+1;
+		}
+		else {
+			right = mid-1;
+		}
+	}
+
+	while(mid >= 0 && vec[mid] > num) {
+		mid--;
+	}
+
+	return mid + 1;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bsle</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
