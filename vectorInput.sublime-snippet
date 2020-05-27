@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+ll vectorSize;
+cin >> vectorSize;
+vector<ll> v(vectorSize);
+for (auto &it: v) {
+	cin >> it;
+}
+$0
+]]></content>
+	<tabTrigger>v</tabTrigger>
+</snippet>
