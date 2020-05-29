@@ -1,3 +1,5 @@
+<snippet>
+	<content><![CDATA[
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         // http://xorshift.di.unimi.it/splitmix64.c
@@ -12,7 +14,14 @@ struct custom_hash {
         return splitmix64(x + FIXED_RANDOM);
     }
 };
+$0
 
 //usage
-unordered_map<long long, int, custom_hash> safe_map;
-gp_hash_table<long long, int, custom_hash> safe_hash_table;
+//unordered_map<long long, int, custom_hash> safe_map;
+//gp_hash_table<long long, int, custom_hash> safe_hash_table;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
